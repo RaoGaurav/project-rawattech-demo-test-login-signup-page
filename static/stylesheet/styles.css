@@ -1,0 +1,43 @@
+/* ------------------------------ Nav Bar ---------------------- */
+
+.container-fluid{
+    padding: 0% 3%;
+}
+
+
+/* --------------- First container -------------------------- */
+#title {
+    background-image: url('../images/title_cover3.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    position: relative;
+}
+.col-md-7{
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+.id-container{
+    background: white;
+    padding: 10%;
+    border-radius: 25px;
+    /* height: 24rem; */
+    
+}
+.btn{
+    background: orange;
+}
+.d-flex{
+    padding: 0%;
+}
+.img-fluid{
+    height: 100%;
+}
+
+#login-id{
+    padding:15%;
+    /* display: inline-block;
+    margin-left: auto;
+    margin-right: auto; */
+    text-align: left;
+}

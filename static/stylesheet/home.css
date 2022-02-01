@@ -1,0 +1,32 @@
+/* .gradient-custom-3 {
+    background: linear-gradient(to right, #ffc251, rgb(81, 187, 230))
+  } */
+  .gradient-custom-4 {
+    /* background: linear-gradient(to right, #ffc251, rgba(143, 211, 244, 1)) */
+    background-image: url('../images/title_cover3.jpg');
+  }
+
+body {
+    padding-top: 70px;
+    background-image: url('../images/title_cover3.jpg');
+    /* background-repeat:no-repeat; */
+    background-size:cover;
+    position: relative;
+
+  }
+.d-flex{
+    padding-top: 4%;
+   
+}
+.btn{
+    background: orange;
+}
+
+.account-type{
+  width: 170px;
+  position: absolute;
+  top: 200px;
+
+  left: 315px;
+
+}

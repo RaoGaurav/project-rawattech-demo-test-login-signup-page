@@ -1,0 +1,201 @@
+<!-- <?php
+    ob_start();
+    require '../config/config.php';
+?> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+
+    <!-- -----------------------------bootstrap 5 & css ----------------------------- -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='stylesheet/register.css') }}">
+
+    <!-------------------------LOGO-------------------------------------------->
+    <link rel="icon" href="../static/images/icon.png">
+
+    <title>Register</title>
+</head>
+
+<body>
+    <section class="vh-100 bg-image">
+        <!-- nav Bar  -->
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" style="
+              padding: 0% " href="#"><img src="../static/images/logo.png" alt="" width="70" height="40"
+                        class="d-inline-block align-text-top"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item ">
+                            <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="https://www.rawattech.com/services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="https://www.rawattech.com/company.html">Company</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                User
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Registration page  -->
+
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card" style="border-radius: 15px;">
+
+                            <!-- --------------- Details Card ---------------------- -->
+
+                            <div class="card-body p-5">
+                                <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+                                <!-- -------------- Form Card ----------------- -->
+
+                                <form class="myform" action="/add_user" method="post">
+
+                                    <div class="form-outline mb-4">
+                                        <!-- <label class="form-label" for="form3Example1cg">Your Name</label> -->
+                                        <input name="your_name" type="text" id="form3Example1cg"
+                                            class="form-control form-control-lg" placeholder="Your Name" required />
+                                    </div>
+
+                                    <!-- Gender Input  -->
+                                    <div style="display: inline-block;">
+                                        <div class="">
+                                            <div class="d-md-flex justify-content-start align-items-center mb-4 py-2"
+                                                style="display: inline;">
+
+                                                <label class="mb-0 me-4 form-label">Gender: </label>
+
+                                                <div class="form-check form-check-inline mb-0 me-4">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="inlineRadioOptions" id="maleGender" value="Male" required>
+                                                    <label class="form-check-label" for="maleGender"><i
+                                                            class="fas fa-mars"></i></label>
+                                                </div>
+
+                                                <div class="form-check form-check-inline mb-0 me-4">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="inlineRadioOptions" id="femaleGender" value="Female"
+                                                        required>
+                                                    <label class="form-check-label" for="femaleGender"><i
+                                                            class="fas fa-venus"></i></label>
+                                                </div>
+
+
+                                                <div class="form-check form-check-inline mb-0">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="inlineRadioOptions" id="otherGender" value="Other">
+                                                    <label class="form-check-label" for="otherGender"><i
+                                                            class="fas fa-venus-mars"></i></label>
+                                                </div>
+                                            </div>
+
+
+                                            <!-- Type of Account  -->
+
+                                        </div>
+                                        <div class="d-md-flex justify-content-start align-items-center mb-4 py-2 account-type"
+                                            style="display: inline;">
+                                            <select class="form-select" aria-label="Default select example"
+                                                name="type_of_account" required>
+                                                <option selected>Type of Account</option>
+                                                <option value="Owner">Owner</option>
+                                                <option value="Employee">Employee</option>
+                                                <option value="Customer">Customer</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- Email Input  -->
+
+                                    <div class="form-outline mb-4">
+                                        <!-- <label class="form-label" for="form3Example3cg">Your Email</label> -->
+                                        <input name="email" type="email" id="form3Example3cg"
+                                            class="form-control form-control-lg" placeholder="Your Email" required />
+                                    </div>
+
+                                    <!-- Password Input  -->
+
+                                    <div class="form-outline mb-4">
+                                        <!-- <label class="form-label" for="form3Example4cg">Password</label> -->
+                                        <input name="password" type="password" id="form3Example4cg"
+                                            class="form-control form-control-lg" placeholder="Password" required />
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <!-- <label class="form-label" for="form3Example4cdg">Repeat your password</label> -->
+                                        <input name="cpassword" type="password" id="form3Example4cdg"
+                                            class="form-control form-control-lg" placeholder="Repeat your password"
+                                            required />
+                                    </div>
+
+                                    <!-- Terms and Conditions check box  -->
+
+                                    <div class="form-check d-flex justify-content-center mb-5">
+                                        <input class="form-check-input me-2" type="checkbox" value=""
+                                            id="form2Example3cg" required />
+                                        <label class="form-check-label" for="form2Example3g">
+                                            I agree all statements in <a href="#!" class="text-body"><u>Terms of
+                                                    service</u></a>
+                                        </label>
+                                    </div>
+
+                                    <!-- Register Button  -->
+
+                                    <div class="d-flex justify-content-center">
+                                        <button name="submit_btn" type="submit"
+                                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                                        <!-- <input name="stype="submit" value="Register"> -->
+                                    </div>
+
+                                    <!-- Already have an account  -->
+
+                                    <p class="text-center text-muted mt-5 mb-0">Have already an account? <a
+                                            href="../index.php" class="fw-bold text-body"><u>Login here</u></a></p>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

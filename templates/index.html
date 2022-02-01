@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- -------------------- Bootstrap 5 & CSS --------------------------------- -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static',filename='stylesheet/styles.css') }}">
+
+  <!-------------------------LOGO-------------------------------------------->
+  <link rel="icon" href="../static/images/icon.png">
+
+  <title>Login Page</title>
+</head>
+
+<body>
+  <section id="title">
+
+    <!-- ---------------------------- NAV BAR ----------------------------------->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" style="
+              padding: 0% " href="#"><img src="../static/images/logo.png" alt="" width="70" height="40"
+            class="d-inline-block align-text-top"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item ">
+              <a class="nav-link active" aria-current="page" href="javascript:window.location.reload(true)">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="https://www.rawattech.com/services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="https://www.rawattech.com/company.html">Company</a>
+            </li>
+            <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      User
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item" href="#">Profile</a></li>
+                      <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                      <li><a class="dropdown-item" href="#"></a></li>
+                    </ul>
+                  </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-------------------------Login Container----------------------------------->
+    <section class="w-100 px-4 py-5">
+      <style>
+        .divider:after,
+        .divider:before {
+          content: "";
+          flex: 1;
+          height: 1px;
+          background: #eee;
+        }
+      </style>
+
+      <!-- <div class="row d-flex justify-content-center">
+                <div class="col-md-8 col-lg-7 col-xl-6">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+                        class="img-fluid" alt="Phone image">
+                </div> -->
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1 ">
+        <form id="login-id" action="/login_validation" method="post">
+          <div class="id-container shadow-lg">
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form1Example13" style="margin-left: 0px;">User Name</label>
+              <input name="email" type="text" id="form1Example13" class="form-control form-control-lg">
+
+              <div class="form-notch">
+                <div class="form-notch-leading" style="width: 9px;"></div>
+                <div class="form-notch-middle" style="width: 88.8px;"></div>
+                <div class="form-notch-trailing"></div>
+              </div>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form1Example23" style="margin-left: 0px;">Password</label>
+              <input name="password" type="password" id="form1Example23" class="form-control form-control-lg">
+              <div class="form-notch">
+                <div class="form-notch-leading" style="width: 9px;"></div>
+                <div class="form-notch-middle" style="width: 64.8px;"></div>
+                <div class="form-notch-trailing"></div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-around align-items-center mb-4">
+              <button name="submit_btn" type="submit" class="btn btn-primary btn-lg btn-block ">Sign in</button>
+            </div>
+            <div>
+              <p class="mb-0">Don't have an account? <a href="/register" class="text-black-50 fw-bold">Sign Up</a></p>
+            </div>
+          </div>
+
+        </form>
+
+        <!-- <?php
+                    if(isset($_POST['submit_btn']))
+                    {
+                      $email = $_POST['email'];
+                      $password = $_POST['password'];
+                      $query = "select * from register WHERE Name ='$email' AND password = '$password'";
+                      $query_run = mysqli_query($con,$query);
+                      if(mysqli_num_rows($query_run)>0)
+                      {
+                        $_SESSION['email'] = $email;
+                        header("location:html/home.php");
+                      }
+                      else
+                      {
+                        echo'<script type="text/javascript"> alert("Invalid") </script>';
+                      }
+
+                    }
+                    ?> -->
+      </div>
+      </div>
+
+      <!-- Checkbox -->
+      <!-- <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked="" autocompleted="">
+                      <label class="form-check-label" for="form1Example3"> Remember me </label> -->
+      <!-- </div>
+                    <a href="#!">Forgot password?</a>
+                  </div> -->
+
+      <!-- Submit button -->
+
+
+
+    </section>
+  </section>
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
